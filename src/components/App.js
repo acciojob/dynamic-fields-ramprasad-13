@@ -10,7 +10,10 @@ const App = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("Submitting:", fields);
+    const fieldsWithoutIds = fields.map((field)=>{
+      return {name:field.name, age:field.age}
+    })
+    console.log(fieldsWithoutIds);
   }
 
   // 2. Add New Field: Just update the state array
@@ -64,7 +67,7 @@ const App = () => {
           </div>
         ))}
 
-        <button type="button" onClick={addMoreBtn}>Add More</button>
+        <button type="button" onClick={addMoreBtn}>Add More..</button>
         <button type="submit">Submit</button>
       </form>
     </div>
